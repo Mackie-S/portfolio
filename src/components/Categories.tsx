@@ -9,7 +9,7 @@ export const Categories = ({ categories }: any) => {
           return (
             <ListItem key={category.id}>
               <Link href={`/category/${category.id}`}>
-                <a>{category.name}</a>
+                {category.name}
               </Link>
             </ListItem> 
           );
