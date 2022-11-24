@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import { HeroOthers } from "../components/HeroOthers";
 import { Page } from "../components/Page";
 import Link from "next/link";
@@ -11,11 +11,13 @@ const blogs: NextPage = ({ blog, categories }: any) => {
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>
-      <Grid templateColumns="repeat(3,1fr)">
-        <GridItem>
-          <Categories categories={categories} />
-        </GridItem>
-        <Card blog={blog} />
+      <Grid templateColumns="repeat(2,1fr)" gap={4} maxW="1180px" justifyContent="center" m="auto">
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          {blog.map((blog: any, index: any) => (
+            <Card key={index} blog={blog} />
+          ))}
+        </Grid>
+        <Categories categories={categories} />
       </Grid>
     </Page>
   );
