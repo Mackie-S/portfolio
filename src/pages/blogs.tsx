@@ -6,8 +6,14 @@ import { client } from "../libs/client";
 import { Card } from "../components/Card";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { Categories } from "../components/Categories";
+import type { Blog } from "../types/blog";
 
-const blogs: NextPage = ({ blog, categories }: any) => {
+type Props = {
+  blog: Blog[];
+  categories: Blog[];
+};
+
+const blogs: NextPage<Props> = ({ blog, categories }) => {
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>

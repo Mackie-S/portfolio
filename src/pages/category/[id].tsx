@@ -5,6 +5,7 @@ import { Page } from "../../components/Page";
 import { HeroOthers } from "../../components/HeroOthers";
 import { Categories } from "../../components/Categories";
 import { Card } from "../../components/Card";
+import type { Blog } from "../../types/blog";
 
 export default function CategoryId({ blog, categories }: any) {
   // カテゴリーに紐付いたコンテンツがない場合に表示
@@ -15,8 +16,12 @@ export default function CategoryId({ blog, categories }: any) {
     <Page>
       <HeroOthers>Blogs</HeroOthers>
       <Grid templateColumns="repeat(3,1fr)">
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          {blog.map((blog: Blog, index: number[]) => (
+            <Card key={index} blog={blog} />
+          ))}
+        </Grid>
         <Categories categories={categories} />
-        <Card blog={blog} />
       </Grid>
     </Page>
   );
@@ -26,12 +31,12 @@ export default function CategoryId({ blog, categories }: any) {
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "categories" });
 
-  const paths = data.contents.map((content: any) => `/category/${content.id}`);
+  const paths = data.contents.map((content: { id: string }) => `/category/${content.id}`);
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "blog", queries: { filters: `category[equals]${id}` } });
   const categoryData = await client.get({ endpoint: "categories" });
