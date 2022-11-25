@@ -7,7 +7,7 @@ export const getStaticProps = async (context: any) => {
   ).then(res => res.json());
   return {
     props: {
-      content,
+      content
     },
   };
 };
