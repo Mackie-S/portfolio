@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default function BlogId({ blog }: Props) {
-  console.log(blog)
   return (
     <Page>
       <HeroOthers>Blog</HeroOthers>
@@ -29,7 +28,7 @@ export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
   const paths = data.contents.map((content: { id: string }) => `/blog/${content.id}`);
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
