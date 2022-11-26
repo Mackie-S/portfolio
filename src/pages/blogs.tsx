@@ -9,17 +9,17 @@ import { Categories } from "../components/Categories";
 import type { Blog } from "../types/blog";
 
 type Props = {
-  blog: Blog[];
+  blogs: Blog[];
   categories: Blog[];
 };
 
-const blogs: NextPage<Props> = ({ blog, categories }) => {
+const blogs: NextPage<Props> = ({ blogs, categories }) => {
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>
       <Grid templateColumns="repeat(2,1fr)" gap={4} maxW="1180px" justifyContent="center" m="auto">
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {blog.map((blog: any, index: any) => (
+          {blogs.map((blog: any, index: any) => (
             <Card key={index} blog={blog} />
           ))}
         </Grid>
@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
       categories: categoryData.contents,
     },
   };
