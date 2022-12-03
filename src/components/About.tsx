@@ -65,8 +65,8 @@ export const About = () => {
               <TextGold>Works</TextGold>
             </Link>
             、
-            <Link href="/blog">
-              <TextGold>Blog</TextGold>
+            <Link href="/blogs">
+              <TextGold>Blogs</TextGold>
             </Link>
             をご覧ください。
             <br />
