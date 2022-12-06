@@ -15,31 +15,32 @@ export const About = () => {
     />
   );
   return (
-    <Box p={10}>
+    <Box p={["5%", "5%", 10]}>
       <Heading as="h2" size="2xl" id="about" textAlign="center" mb="50px">
         About
       </Heading>
-      <Box margin="auto" maxW="1200px" height="530px" position="relative">
+      <Box margin="auto" maxW="935px" height={["unset", "unset", "530px"]} position="relative" display={["flex","flex","block"]} flexDirection="column" alignItems="center" gap={8}>
         <ChakraImage
           src="/images/About_img.webp"
           alt="著者の顔写真"
           display="inline-block"
-          position="absolute"
+          position={["unset", "unset", "absolute"]}
           left="0"
           top="0"
-          w="35%"
+          w={["100%", "100%", "35%"]}
+          maxW={["500px","500px","unset"]}
           objectFit="cover"
           zIndex="1"
-          mr="50%"
+          mr={["unset", "unset", "50%"]}
         />
         <Box
           bgColor="brand.lgray"
-          padding="60px 90px 60px 150px"
-          position="absolute"
+          padding={["5%", "10%", "60px 90px 60px 150px"]}
+          position={["unset", "unset", "absolute"]}
           bottom="0"
           right="0"
-          maxW="870px"
-          w="75%"
+          maxW="700px"
+          w={["100%", "100%", "75%"]}
         >
           <Text>
             こんにちは、DaDa Labの
@@ -54,7 +55,8 @@ export const About = () => {
             <br />
             Web制作、開発の学習及び実績のアウトプットとして本サイトを作成しました。
             <br />
-            現在はフロントエンド技術に注力しておりまして、Reactを利用したサービス開発、Jamstack Architectureでの開発を行っております。
+            現在はフロントエンド技術に注力しておりまして、Reactを利用したサービス開発、Jamstack
+            Architectureでの開発を行っております。
             <br />
             詳しくは
             <Link href="/skills">
