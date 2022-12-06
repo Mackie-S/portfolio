@@ -47,13 +47,9 @@ export const About = () => {
             <Text as="span" fontWeight="bold">
               Mackie
             </Text>
-            と申します。 私の詳細プロフィールは
-            <Link href="/profile">
-              <TextGold>Profile</TextGold>
-            </Link>
-            をご覧ください。
+            と申します。
             <br />
-            Web制作、開発の学習及び実績のアウトプットとして本サイトを作成しました。
+            Web制作、Web開発の学習及び実績のアウトプットとして本サイトを作成しました。
             <br />
             現在はフロントエンド技術に注力しておりまして、Reactを利用したサービス開発、Jamstack
             Architectureでの開発を行っております。
