@@ -4,7 +4,7 @@ import { client } from "../libs/client";
 import { Box, Stack, Heading, Text, Image as ChakraImage, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-
+import bgImg from "../../public/images/background.webp";
 
 export const Card = ({ blog }: any) => {
   return (
@@ -26,7 +26,9 @@ export const Card = ({ blog }: any) => {
               {blog.image ? (
                 <ChakraImage h="210px" src={blog.image.url} alt="" />
               ) : (
-                <Image src="/images/About_img.webp" objectFit="contain" width="100%" height="100%" alt="投稿画像" />
+                <Text fontSize="32px" fontWeight="bold" alignSelf="center">
+                  No Image
+                </Text>
               )}
             </Flex>
             <Stack>
