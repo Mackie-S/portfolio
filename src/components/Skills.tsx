@@ -1,12 +1,5 @@
 import { Box, Flex, Image as ChakraImage } from "@chakra-ui/react";
 import React from "react";
-import { GrReactjs } from "react-icons/gr";
-import { SiNextdotjs } from "react-icons/si";
-import { FaPhp } from "react-icons/fa";
-import { DiCss3 } from "react-icons/di";
-import { AiFillHtml5 } from "react-icons/ai";
-import { SiJavascript } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
 
 const Skills = () => {
   return (
