@@ -73,6 +73,7 @@ export const Header = () => {
                 fontWeight="bold"
                 position="relative"
                 display="inline-block"
+                cursor="pointer"
                 color={router.pathname === value.link ? "brand.gray" : "black"}
                 _hover={{ _after: underline, color: "brand.gray" }}
                 _after={router.pathname === value.link ? underline : { opacity: "0" }}
