@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
 
-
 html,
 body {
   padding: 0;
@@ -16,6 +15,21 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+code,
+pre {
+  margin: 1.3rem 0;
+  background: #1a2638;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.7em;
+  box-shadow: 0 4px 6px -1px #000e1e26;
+  word-break: normal;
+  word-wrap: normal;
+  display: flex;
+  color: white;
+  padding: 1.1rem;
 }
 
 @media (prefers-color-scheme: dark) {
