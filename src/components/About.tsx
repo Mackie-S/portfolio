@@ -1,5 +1,4 @@
 import { Heading, Box, Text, TextProps, Image as ChakraImage } from "@chakra-ui/react";
-import Image from "next/image";
 import Link from "next/link";
 
 export const About = () => {
@@ -19,7 +18,16 @@ export const About = () => {
       <Heading as="h2" size="2xl" id="about" textAlign="center" mb="50px">
         About
       </Heading>
-      <Box margin="auto" maxW="935px" height={["unset", "unset", "530px"]} position="relative" display={["flex","flex","block"]} flexDirection="column" alignItems="center" gap={8}>
+      <Box
+        margin="auto"
+        maxW="935px"
+        height={["unset", "unset", "530px"]}
+        position="relative"
+        display={["flex", "flex", "block"]}
+        flexDirection="column"
+        alignItems="center"
+        gap={8}
+      >
         <ChakraImage
           src="/images/About_img.webp"
           alt="著者の顔写真"
@@ -28,7 +36,7 @@ export const About = () => {
           left="0"
           top="0"
           w={["100%", "100%", "35%"]}
-          maxW={["500px","500px","unset"]}
+          maxW={["500px", "500px", "unset"]}
           objectFit="cover"
           zIndex="1"
           mr={["unset", "unset", "50%"]}
@@ -49,7 +57,7 @@ export const About = () => {
             </Text>
             と申します。
             <br />
-            Web制作、Web開発の学習及び実績のアウトプットとして本サイトを作成しました。
+            主にWeb開発の学習及び実績のアウトプットとして本サイトを作成しました。
             <br />
             現在はフロントエンド技術に注力しておりまして、Reactを利用したサービス開発、Jamstack
             Architectureでの開発を行っております。
