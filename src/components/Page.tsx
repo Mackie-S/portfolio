@@ -1,6 +1,5 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 import { Header } from "./Header";
-import { Hero } from "./Hero";
 import { Footer } from "./Footer";
 
 type PageProps = {

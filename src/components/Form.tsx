@@ -1,5 +1,4 @@
 import { Box, FormControl, FormLabel, Input, Textarea, Button, Text } from "@chakra-ui/react";
-import Link from "next/link";
 
 export const Form = () => {
   return (

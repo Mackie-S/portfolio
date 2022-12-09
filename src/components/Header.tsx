@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Flex, Box, HStack, UnorderedList, ListItem } from "@chakra-ui/react";
-import { EventHandler, useDebugValue, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { MenuButton } from "./MenuButton";
 

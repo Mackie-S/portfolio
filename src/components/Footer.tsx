@@ -1,5 +1,4 @@
 import { Heading, Flex, Image as ChakraImage } from "@chakra-ui/react";
-// import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {

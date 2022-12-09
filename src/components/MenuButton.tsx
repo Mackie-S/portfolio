@@ -15,7 +15,7 @@ type MenuButtonProps = {
 export const MenuButton = ({ navMenus }: MenuButtonProps) => {
   const router = useRouter();
   return (
-    <Box display={["block", "block", "none"]}>
+    <Box display={["block", "block", "none"]} mt="20px">
       <Menu>
         <ChakraMenuButton as={IconButton} aria-label="Options" icon={<HamburgerIcon />} variant="outline" />
         <MenuList>

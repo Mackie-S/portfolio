@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { CommingSoon } from "../components/ComingSoon";
 import { HeroOthers } from "../components/HeroOthers";
 import { Page } from "../components/Page";
 import { Form } from "../components/Form";

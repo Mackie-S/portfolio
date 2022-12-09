@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import type { FC, ReactNode } from "react";
+import type {  ReactNode } from "react";
 
 type Props = {
   children: ReactNode;

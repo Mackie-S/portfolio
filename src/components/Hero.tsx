@@ -1,4 +1,4 @@
-import { Flex, Box, Button, Heading } from "@chakra-ui/react";
+import { Flex, Button, Heading } from "@chakra-ui/react";
 import Link from "next/link";
 import bgImg from "../../public/images/background.webp";
 

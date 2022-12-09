@@ -1,13 +1,17 @@
-import Link from "next/link";
 import { client } from "../../libs/client";
 import { Grid } from "@chakra-ui/react";
 import { Page } from "../../components/Page";
 import { HeroOthers } from "../../components/HeroOthers";
 import { Categories } from "../../components/Categories";
 import { Card } from "../../components/Card";
-import type { Blog } from "../../types/blog";
+import type { Blog, Category } from "../../types/blog";
 
-export default function CategoryId({ blog, categories }: any) {
+type Props = {
+  blog: Blog[];
+  categories: Category[];
+};
+
+export default function CategoryId({ blog, categories }: Props) {
   // カテゴリーに紐付いたコンテンツがない場合に表示
   if (blog.length === 0) {
     return <div>ブログコンテンツがありません</div>;
@@ -17,7 +21,7 @@ export default function CategoryId({ blog, categories }: any) {
       <HeroOthers>Blogs</HeroOthers>
       <Grid templateColumns="repeat(3,1fr)">
         <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {blog.map((blog: Blog, index: number[]) => (
+          {blog.map((blog ,index) => (
             <Card key={index} blog={blog} />
           ))}
         </Grid>

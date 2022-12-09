@@ -1,12 +1,12 @@
 import { Page } from "../components/Page";
-import Skills from "../components/Skills";
 import { HeroOthers } from "../components/HeroOthers";
+import { CommingSoon } from "../components/ComingSoon";
 
 const skills = () => {
   return (
     <Page>
       <HeroOthers>Skills</HeroOthers>
-      <Skills />
+      <CommingSoon />
     </Page>
   );
 };
