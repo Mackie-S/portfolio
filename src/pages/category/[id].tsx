@@ -1,5 +1,5 @@
 import { client } from "../../libs/client";
-import { Grid } from "@chakra-ui/react";
+import { Grid, Flex } from "@chakra-ui/react";
 import { Page } from "../../components/Page";
 import { HeroOthers } from "../../components/HeroOthers";
 import { Categories } from "../../components/Categories";
@@ -7,24 +7,24 @@ import { Card } from "../../components/Card";
 import type { Blog, Category } from "../../types/blog";
 
 type Props = {
-  blog: Blog[];
+  blogs: Blog[];
   categories: Category[];
 };
 
-export default function CategoryId({ blog, categories }: Props) {
+export default function CategoryId({ blogs, categories }: Props) {
   // カテゴリーに紐付いたコンテンツがない場合に表示
-  if (blog.length === 0) {
+  if (blogs.length === 0) {
     return <div>ブログコンテンツがありません</div>;
   }
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>
-      <Grid templateColumns="repeat(3,1fr)">
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {blog.map((blog ,index) => (
+      <Grid templateColumns={["1fr", "1fr", "repeat(2,1fr)"]} gap={4} maxW="1380px" m="auto" p={["5%", "5%", "50px"]}>
+        <Flex direction="column" gap={4}>
+          {blogs.map((blog, index) => (
             <Card key={index} blog={blog} />
           ))}
-        </Grid>
+        </Flex>
         <Categories categories={categories} />
       </Grid>
     </Page>
@@ -47,7 +47,7 @@ export const getStaticProps = async (context: { params: { id: string } }) => {
 
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
       categories: categoryData.contents,
     },
   };
