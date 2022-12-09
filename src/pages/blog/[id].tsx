@@ -1,9 +1,8 @@
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { client } from "../../libs/client";
 import { Page } from "../../components/Page";
 import { HeroOthers } from "../../components/HeroOthers";
 import type { Blog } from "../../types/blog";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Image as ChakraImage, Flex } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
@@ -20,6 +19,15 @@ export default function BlogId({ blog }: Props) {
     <Page>
       <HeroOthers>Blog</HeroOthers>
       <Box p={["5%", "5%", "50px"]} m="auto" maxW="1000px">
+        {blog.image ? (
+          <ChakraImage w="100%" h="200px" mb="20px" objectFit="cover" src={blog.image.url} alt="" />
+        ) : (
+          <Flex w="100%" h="200px" bg="gray.100"  mb="20px" justify="center">
+            <Text fontSize="32px" fontWeight="bold" alignSelf="center">
+              No Image
+            </Text>
+          </Flex>
+        )}
         <Heading
           mb="10px"
           as="h2"
@@ -42,6 +50,8 @@ export default function BlogId({ blog }: Props) {
         </Heading>
         <Text mb="20px">{formattedDay}</Text>
         <Box
+          lineHeight="2"
+          _hover={{ color: "brand.gray" }}
           dangerouslySetInnerHTML={{
             __html: `${blog.body}`,
           }}

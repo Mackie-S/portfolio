@@ -1,28 +1,27 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
+import type { NextPage } from "next";
 import { HeroOthers } from "../components/HeroOthers";
 import { Page } from "../components/Page";
-import Link from "next/link";
 import { client } from "../libs/client";
 import { Card } from "../components/Card";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Flex, Grid } from "@chakra-ui/react";
 import { Categories } from "../components/Categories";
-import type { Blog } from "../types/blog";
+import type { Blog, Category } from "../types/blog";
 
 type Props = {
   blogs: Blog[];
-  categories: Blog[];
+  categories: Category[];
 };
 
-const blogs: NextPage<Props> = ({ blogs, categories }) => {
+const blogs: NextPage<Props> = ({ blogs, categories }: Props) => {
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>
-      <Grid templateColumns="repeat(2,1fr)" gap={4} maxW="1180px" justifyContent="center" m="auto">
-        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-          {blogs.map((blog: any, index: any) => (
+      <Grid templateColumns={["1fr", "1fr", "repeat(2,1fr)"]} gap={4} maxW="1380px" m="auto" p={["5%", "5%", "50px"]}>
+        <Flex direction="column" gap={4}>
+          {blogs.map((blog, index) => (
             <Card key={index} blog={blog} />
           ))}
-        </Grid>
+        </Flex>
         <Categories categories={categories} />
       </Grid>
     </Page>
