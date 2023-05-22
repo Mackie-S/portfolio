@@ -18,7 +18,7 @@ export default function CategoryId({ blogs, categories }: Props) {
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>
-      <Grid templateColumns={["1fr", "1fr", "repeat(2,1fr)"]} gap={4} maxW="1380px" m="auto" p={["5%", "5%", "50px"]}>
+      <Grid templateColumns={["1fr", "1fr", "2fr 1fr"]} gap={4} maxW="1380px" m="auto" p={["5%", "5%", "50px"]}>
         <Flex direction="column" gap={4}>
           {blogs.map((blog, index) => (
             <Card key={index} blog={blog} />

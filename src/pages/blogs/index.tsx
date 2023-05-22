@@ -17,8 +17,7 @@ const blogs: NextPage<Props> = ({ blogs, categories }: Props) => {
     <Page>
       <HeroOthers>Blogs</HeroOthers>
       <Grid
-        justifyContent="space-between"
-        templateColumns={["1fr", "1fr", "repeat(2,1fr)"]}
+        templateColumns={["1fr", "1fr", "2fr 1fr"]}
         gap={4}
         maxW="1380px"
         m="auto"
