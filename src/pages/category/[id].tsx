@@ -5,6 +5,7 @@ import { HeroOthers } from "../../components/HeroOthers";
 import { Categories } from "../../components/Categories";
 import { Card } from "../../components/Card";
 import type { Blog, Category } from "../../types/blog";
+import { useRouter } from "next/router";
 
 type Props = {
   blogs: Blog[];
@@ -12,10 +13,8 @@ type Props = {
 };
 
 export default function CategoryId({ blogs, categories }: Props) {
-  // カテゴリーに紐付いたコンテンツがない場合に表示
-  if (blogs.length === 0) {
-    return <div>ブログコンテンツがありません</div>;
-  }
+  const router = useRouter();
+
   return (
     <Page>
       <HeroOthers>Blogs</HeroOthers>
@@ -31,7 +30,6 @@ export default function CategoryId({ blogs, categories }: Props) {
   );
 }
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "categories" });
 
@@ -39,11 +37,19 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", queries: { filters: `category[equals]${id}` } });
+  const data = await client.get({ endpoint: "blogs", queries: { filters: `category[equals]${id}` } });
   const categoryData = await client.get({ endpoint: "categories" });
+
+  if (data.contents.length === 0) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {

@@ -8,14 +8,6 @@ import { MenuButton } from "./MenuButton";
 export const Header = () => {
   const navMenus = [
     {
-      name: "Skills",
-      link: "/skills",
-    },
-    {
-      name: "Works",
-      link: "/works",
-    },
-    {
       name: "Blogs",
       link: "/blogs",
     },

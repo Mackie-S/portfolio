@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { CommingSoon } from "../components/ComingSoon";
+import { CommingSoon } from "../components/core/ComingSoon";
 import { HeroOthers } from "../components/HeroOthers";
 import { Page } from "../components/Page";
 

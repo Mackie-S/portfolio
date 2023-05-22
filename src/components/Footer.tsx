@@ -12,7 +12,7 @@ export const Footer = () => {
       justify="center"
       position="relative"
     >
-      <Flex gap={["20px","20px","45px"]} position="absolute" top="20px">
+      <Flex gap={["20px", "20px", "45px"]} position="absolute" top="20px">
         <Link href="/">
           <a>
             <ChakraImage
@@ -45,7 +45,7 @@ export const Footer = () => {
         </Link>
       </Flex>
       <Heading as="h2" size={["sm", "sm", "md"]} color="white" alignSelf="center">
-        Copyright ©️ 2022 DaDa Lab
+        Copyright ©️ 2022 dada
       </Heading>
     </Flex>
   );

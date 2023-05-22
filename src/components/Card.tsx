@@ -9,7 +9,7 @@ type Props = {
 
 export const Card = ({ blog }: Props) => {
   return (
-    <Link href={`/blog/${blog.id}`} key={blog.id}>
+    <Link href={`/blogs/${blog.id}`} key={blog.id}>
       <a>
         <Flex
           bg={"white"}

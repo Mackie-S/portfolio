@@ -7,7 +7,7 @@ export const Hero = () => {
     <Flex justify="center" align="center" width="full" height="100vh" bgImage={bgImg.src} bgSize="cover">
       <Flex direction="column" align="center" gap="30px">
         <Heading as="h1" size="4xl">
-          DaDa Lab
+          dada
         </Heading>
         <Link href="#about">
           <Button

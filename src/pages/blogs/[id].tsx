@@ -22,7 +22,7 @@ export default function BlogId({ blog }: Props) {
         {blog.image ? (
           <ChakraImage w="100%" h="200px" mb="20px" objectFit="cover" src={blog.image.url} alt="" />
         ) : (
-          <Flex w="100%" h="200px" bg="gray.100"  mb="20px" justify="center">
+          <Flex w="100%" h="200px" bg="gray.100" mb="20px" justify="center">
             <Text fontSize="32px" fontWeight="bold" alignSelf="center">
               No Image
             </Text>
@@ -63,16 +63,16 @@ export default function BlogId({ blog }: Props) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data = await client.get({ endpoint: "blogs" });
 
-  const paths = data.contents.map((content: { id: string }) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: { id: string }) => `/blogs/${content.id}`);
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", contentId: id });
+  const data = await client.get({ endpoint: "blogs", contentId: id });
 
   return {
     props: {

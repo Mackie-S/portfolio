@@ -1,18 +1,19 @@
 import { Heading, Box, Text, TextProps, Image as ChakraImage } from "@chakra-ui/react";
 import Link from "next/link";
 
+const TextGold = (props: TextProps) => (
+  <Text
+    as="span"
+    cursor="pointer"
+    color="brand.dgold"
+    _hover={{ color: "brand.gold" }}
+    borderBottom="solid 1px"
+    transition="color 100ms cubic-bezier(.08,.52,.52,1)"
+    {...props}
+  />
+);
+
 export const About = () => {
-  const TextGold = (props: TextProps) => (
-    <Text
-      as="span"
-      cursor="pointer"
-      color="brand.dgold"
-      _hover={{ color: "brand.gold" }}
-      borderBottom="solid 1px"
-      transition="color 100ms cubic-bezier(.08,.52,.52,1)"
-      {...props}
-    />
-  );
   return (
     <Box p={["5%", "5%", 10]}>
       <Heading as="h2" size="2xl" id="about" textAlign="center" mb="50px">
@@ -51,7 +52,7 @@ export const About = () => {
           w={["100%", "100%", "75%"]}
         >
           <Text>
-            こんにちは、DaDa Labの
+            こんにちは、dadaの
             <Text as="span" fontWeight="bold">
               Mackie
             </Text>
@@ -59,7 +60,8 @@ export const About = () => {
             <br />
             主にWeb開発の学習及び実績のアウトプットとして本サイトを作成しました。
             <br />
-            現在はフロントエンド技術に注力しておりまして、Reactを利用したサービス開発、Jamstack
+            フロントエンド実装を得意としており、React, Next.jsを利用したサービス開発経験があります。
+            最近ではNestJSの実装もお仕事で携わっており、
             Architectureでの開発を行っております。
             <br />
             詳しくは

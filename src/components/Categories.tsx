@@ -8,7 +8,7 @@ type Props = {
 
 export const Categories = ({ categories }: Props) => {
   return (
-    <Flex px={10} gap={4} direction="column" maxW="400px">
+    <Flex gap={4} direction="column">
       <Heading as="h3" size="md" bgColor="#eee" py="6px" px="10px" borderRadius="5px">
         カテゴリー
       </Heading>

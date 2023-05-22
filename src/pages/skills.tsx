@@ -1,6 +1,6 @@
 import { Page } from "../components/Page";
 import { HeroOthers } from "../components/HeroOthers";
-import { CommingSoon } from "../components/ComingSoon";
+import { CommingSoon } from "../components/core/ComingSoon";
 
 const skills = () => {
   return (
