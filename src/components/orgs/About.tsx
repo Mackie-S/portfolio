@@ -51,38 +51,24 @@ export const About = () => {
           maxW="700px"
           w={["100%", "100%", "75%"]}
         >
-          <Text>
-            こんにちは、dadaの
+          <Text lineHeight={2}>
+            こんにちは、合同会社dadaの
             <Text as="span" fontWeight="bold">
               Mackie
             </Text>
             と申します。
             <br />
-            主にWeb開発の学習及び実績のアウトプットとして本サイトを作成しました。
+            Jamstack Architectureの学習として本サイトを作成しました。
             <br />
-            フロントエンド実装を得意としており、React, Next.jsを利用したサービス開発経験があります。
-            最近ではNestJSの実装もお仕事で携わっており、
-            Architectureでの開発を行っております。
+            フロントエンド実装を得意としており、React, Next.jsを利用したサービス開発メインでお仕事をしております。
             <br />
-            詳しくは
-            <Link href="/skills">
-              <TextGold>Skills</TextGold>
-            </Link>
-            、
-            <Link href="/works">
-              <TextGold>Works</TextGold>
-            </Link>
-            、
-            <Link href="/blogs">
-              <TextGold>Blogs</TextGold>
-            </Link>
-            をご覧ください。
+            最近ではNestJSの実装もお仕事で携わっており、フルスタックで業務を行えるようなキャリアを目指しております。
             <br />
-            その他、LPやWordPressテーマ開発のお仕事も承っておりますのでご興味ございましたら
+            お仕事のご依頼は
             <Link href="/contact">
-              <TextGold>お問い合せ</TextGold>
+              <TextGold>お問い合せフォーム</TextGold>
             </Link>
-            ください。
+            にてお願いいたします。
           </Text>
         </Box>
       </Box>
